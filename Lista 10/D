@@ -1,0 +1,44 @@
+using System;
+
+namespace Exercicios
+{
+    class Program
+    {
+        public static void Main()
+        {
+//Criar um algoritmo que leia os elementos de uma matriz inteira 10x10 os
+//elementos, exceto os elementos da diagonal principal.
+	
+           int[,] inteiros = new int[10,10];
+           
+           for(int i = 0; i < 10; i++){
+           	for (int j = 0; j < 10; j++){
+           		
+           		Console.WriteLine("Digite os números da posição: [" + i + "," + j + "]");
+           		
+           		inteiros[i,j] = int.Parse(Console.ReadLine());
+           		
+           		if (i == j){
+           			
+           			inteiros[i,j] = 0;
+           		}
+           	}
+           	
+           }
+           
+            Console.WriteLine("Elementos da matriz execto a diagonal principal:");
+            for (int i = 0; i < inteiros.GetLength(0); i++){
+            	for (int j = 0; j < inteiros.GetLength(1); j++){
+            		
+            		Console.Write(inteiros[i,j] + " ");
+            	}
+            	
+            	Console.WriteLine();
+            }
+ 
+            Console.WriteLine("");
+            Console.WriteLine("Pressione qualquer tecla para fechar.");
+            Console.ReadKey();
+        }
+    }
+}
