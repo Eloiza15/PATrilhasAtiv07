@@ -1,0 +1,55 @@
+using System;
+
+namespace Exercicios
+{
+    class Program
+    {
+        public static void Main()
+        {
+        	
+//Faça um programa que carregue:
+//a. Um vetor de oito posições com os nomes das lojas;
+//b. Um outro vetor com quatro posições com os nomes dos produtos;
+//c. Uma matriz com os preços de todos os produtos em cada loja.
+//O programa deve mostrar todas as relações (nome do produto - nome da loja
+//- preço) nas quais o preço não ultrapasse R$ 120,00.
+
+string[] lojas = {
+            
+                "Loja A", "Loja B", "Loja C", "Loja D", 
+                "Loja E", "Loja F", "Loja G", "Loja H" 
+            };
+ 
+string[] produtos = {
+             
+                "Produto 1", "Produto 2", "Produto 3", "Produto 4" 
+            };
+  
+decimal[,] precos = {
+            
+                { 110.50m, 140.00m, 99.99m, 180.00m },
+                { 115.00m, 100.00m, 130.00m, 90.00m },
+                { 95.00m, 110.00m, 99.50m, 200.00m },
+                { 120.00m, 150.00m, 80.00m, 140.00m },
+                { 110.00m, 115.00m, 105.00m, 95.00m },
+                { 80.00m, 125.00m, 110.00m, 130.00m },
+                { 99.00m, 118.00m, 90.00m, 160.00m },
+                { 115.00m, 105.00m, 125.00m, 170.00m }
+            };
+  
+  Console.WriteLine("Relações de produtos com preço <= R$ 120,00:");
+  for (int i = 0; i < lojas.Length; i++){
+  	for (int j = 0; j < produtos.Length; j++){
+  		
+  		if (precos[i,j] <= 120.00m){
+  			
+  			Console.WriteLine ("Produto: " + produtos[j] + " - Loja: " + lojas[i] + " - Preço: " + precos[i, j]);
+  		}
+  	}
+  }           
+            Console.WriteLine("");
+            Console.WriteLine("Pressione qualquer tecla para fechar.");
+            Console.ReadKey();
+        }
+    }
+}
